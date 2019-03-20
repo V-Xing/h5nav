@@ -309,7 +309,7 @@ class H5NavCmd(ExitCmd, ShellCmd, SmartCmd, cmd.Cmd, object):
         print("Enter group. Also ok: `cd ..` (up), `cd -` (last), `cd` (root)")
 
     def top_level_spaces(self, s):
-        """Count top-level spaces in `s`, ignoring those within square brackets"""
+        """Count top-level spaces in s, ignoring those within square brackets"""
         balance = 0
         count = 0
         for c in s:
@@ -536,7 +536,7 @@ class H5NavCmd(ExitCmd, ShellCmd, SmartCmd, cmd.Cmd, object):
         return slice(*[int(p) if p else None for p in parts])
 
     def get_elem_slice(self, name, slice_string):
-        """Print slice of dataset or group using name"""
+        """Get the slice_string slice of a dataset or group using name"""
         dim_strings = [x.strip() for x in slice_string.split(',')]
         s_slice = ()
         for dim in dim_strings:
